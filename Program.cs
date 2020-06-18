@@ -7,10 +7,15 @@ namespace Negativo
         static void Main(string[] args)
         {
             int numero;
-            Console.Write("Digite um número: ");
-            numero = Convert.ToInt32(Console.ReadLine());
+            string numeroDigitado;
+            bool numeroValido;
 
-            if (numero < 0){
+            Console.Write("Digite um número: ");
+            
+            numeroDigitado = Console.ReadLine();
+            numeroValido = Int32.TryParse(numeroDigitado, out numero);
+
+            if (numeroValido && numero < 0){
                 Console.WriteLine("Você digitou um número negativo.");
             }
         }
